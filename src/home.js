@@ -1,18 +1,8 @@
-function createButton() {
-    const button = document.createElement("button");
-    button.innerText = "Click Me"
 
-    return button
-}
-
-function createHeader(){
-    const header = document.createElement("div");
-    const button = createButton();
-
-    header.classList.add("header");
-    header.appendChild(button);
-
-    return header
+function createTitle(){
+    const title = document.createElement("h1");
+    title.innerText ="Facturas Deliciosas";
+    return title
 }
 
 function createImage(){
@@ -31,7 +21,7 @@ function createText(){
 export default function createHome(){
     const contEl = document.getElementById("content");
 
-    const header = createHeader();
+    const header = createTitle();
 
     const img = createImage();
 
