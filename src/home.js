@@ -1,3 +1,4 @@
+import factura from './facturas.png';
 
 function createTitle(){
     const title = document.createElement("h1");
@@ -8,7 +9,7 @@ function createTitle(){
 function createImage(){
 
     const img = document.createElement("img");
-    img.src = "../img/facturas.png"
+    img.src = factura
     return img
 }
 

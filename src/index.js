@@ -27,25 +27,27 @@ function createButton(eventHandler,title) {
     const header = document.createElement("div");
     header.classList.add("header");
 
+    const buttons = [
+        {
+            title:"Home",
+            handler:createHome
+        },
+        {
+            title:"Menu",
+            handler:createMenu
+        },
+        {
+            title:"Contact",
+            handler:createContact
+        }
+    ]
 
-    const menuButton = createButton( () => {
-        clearContent();
-        tabChangeHandler(createMenu)
-    },"Menu");
-
-    const contactButton = createButton( () => {
-        clearContent();
-        tabChangeHandler(createContact)
-    },"Contact");
-
-    const homeButton = createButton( () => {
-        clearContent();
-        tabChangeHandler(createHome)
-    },"Home");
-
-    header.appendChild(homeButton);
-    header.appendChild(menuButton);
-    header.appendChild(contactButton);
+    buttons.forEach((button) => {
+        const buttonEl = createButton(() => {
+            tabChangeHandler(button.handler)
+        },button.title);
+        header.appendChild(buttonEl);
+    })
 
     headerDiv.appendChild(header)
 })();
